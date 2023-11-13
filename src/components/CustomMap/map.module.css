@@ -1,7 +1,16 @@
 .map {
-	width: 100%;
-	height: 50vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100dvw;
+	height: 100dvh;
+
 	border: none;
-	margin: 1rem 0;
+
 	background: #fff2;
+}
+
+.map_container {
+	width: 100%;
+	height: 100%;
 }
