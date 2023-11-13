@@ -13,7 +13,7 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<Header activeTab={activeTab} setActiveTab={setActiveTab} />
-			<CustomMap address="Av Vereador Marcus Paiva, 74, ilhéus" />
+			<CustomMap />
 			<div className={styles.popup}>
 				{activeTab == "ofertar" ? <Ofertar /> : <Solicitar />}
 			</div>
