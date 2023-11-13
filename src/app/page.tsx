@@ -5,6 +5,7 @@ import styles from "./page.module.css"
 import { useState } from "react"
 import Ofertar from "@/components/Ofertar"
 import Solicitar from "@/components/Solicitar"
+import CustomMap from "@/components/CustomMap"
 
 export default function Home() {
 	const [activeTab, setActiveTab] = useState("ofertar")
@@ -12,7 +13,7 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<Header activeTab={activeTab} setActiveTab={setActiveTab} />
-			<h1>mapa</h1>
+			<CustomMap address="Av Vereador Marcus Paiva, 74, ilhéus" />
 			<div className={styles.popup}>
 				{activeTab == "ofertar" ? <Ofertar /> : <Solicitar />}
 			</div>
