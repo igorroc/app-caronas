@@ -1,11 +1,14 @@
 import React from "react"
 import styles from "./ofertar.module.css"
 
+import { toast } from "react-toastify"
+
 export default function Solicitar() {
 	function handleSubmit(ev: React.FormEvent<HTMLFormElement>) {
 		ev.preventDefault()
 
 		console.log("solicitar")
+		toast.warn("Funcionalidade ainda não implementada")
 	}
 
 	return (

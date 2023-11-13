@@ -7,6 +7,7 @@ import styles from "./header.module.css"
 
 import Profile from "@/../public/profile.png"
 import Image from "next/image"
+import { toast } from "react-toastify"
 
 type HeaderProps = {
 	activeTab: string
@@ -18,9 +19,13 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
 		setActiveTab(tab)
 	}
 
+	function notImplemented() {
+		toast.warn("Funcionalidade não implementada")
+	}
+
 	return (
 		<header className={styles.header}>
-			<div className={styles.menu}>
+			<div className={styles.menu} onClick={notImplemented}>
 				<BiMenu size={32} />
 			</div>
 			<div className={styles.actions}>
@@ -39,7 +44,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
 					Solicitar
 				</button>
 			</div>
-			<div className={styles.profile}>
+			<div className={styles.profile} onClick={notImplemented}>
 				<Image src={Profile} alt="Foto de perfil" className={styles.img} />
 			</div>
 		</header>

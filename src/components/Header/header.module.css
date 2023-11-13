@@ -19,6 +19,7 @@
 		border-radius: 0.5rem;
 
 		box-shadow: var(--default-shadow);
+		cursor: pointer;
 	}
 
 	.actions {
@@ -50,6 +51,7 @@
 		height: 3rem;
 		border-radius: 50%;
 		box-shadow: var(--default-shadow);
+		cursor: pointer;
 
 		.img {
 			width: 100%;
