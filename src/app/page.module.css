@@ -41,3 +41,17 @@
 	border-radius: 5rem;
 	background: #333;
 }
+
+.button {
+	background: #57c94d;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	cursor: pointer;
+
+	transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+	background: #4dbd42;
+}

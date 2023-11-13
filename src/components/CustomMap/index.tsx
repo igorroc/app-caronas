@@ -3,6 +3,7 @@ import styles from "./map.module.css"
 import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api"
 
 import MarkerIgor from "@/../../public/marker_igor.png"
+import Loading from "../Loading"
 
 export default function CustomMap() {
 	const { isLoaded } = useLoadScript({
@@ -13,7 +14,7 @@ export default function CustomMap() {
 	return (
 		<div className={styles.map}>
 			{!isLoaded ? (
-				<h1>Carregando mapa...</h1>
+				<Loading />
 			) : (
 				<GoogleMap
 					mapContainerClassName={styles.map_container}
