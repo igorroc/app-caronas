@@ -8,9 +8,12 @@ import styles from "./header.module.css"
 import Profile from "@/../public/profile.png"
 import Image from "next/image"
 
-export default function Header() {
-	const [activeTab, setActiveTab] = React.useState("ofertar")
+type HeaderProps = {
+	activeTab: string
+	setActiveTab: (tab: string) => void
+}
 
+export default function Header({ activeTab, setActiveTab }: HeaderProps) {
 	function changeTab(tab: string) {
 		setActiveTab(tab)
 	}
