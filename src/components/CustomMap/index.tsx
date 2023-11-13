@@ -23,6 +23,8 @@ export default function CustomMap() {
 					heading={50}
 					options={{
 						mapTypeControl: false,
+						gestureHandling: "greedy",
+						disableDefaultUI: true,
 						styles: [
 							{
 								elementType: "geometry",
