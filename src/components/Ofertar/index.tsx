@@ -8,7 +8,12 @@ export default function Ofertar() {
 
 		const formData = new FormData(ev.currentTarget)
 
-		const jsonData = Object.fromEntries(formData)
+		const jsonData = {
+			origin: formData.get("origem"),
+			destination: formData.get("destino"),
+			available_seats: formData.get("vagas"),
+			time: formData.get("horario"),
+		}
 
 		axios.post("/api/offer", jsonData)
 	}
