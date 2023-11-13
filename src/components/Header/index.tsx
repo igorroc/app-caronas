@@ -21,7 +21,7 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
 	return (
 		<header className={styles.header}>
 			<div className={styles.menu}>
-				<BiMenu />
+				<BiMenu size={32} />
 			</div>
 			<div className={styles.actions}>
 				<button
