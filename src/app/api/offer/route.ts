@@ -13,7 +13,10 @@ export async function POST(req: Request) {
 	available_seats = parseInt(available_seats)
 
 	if (!origin || !destination || !available_seats || !time) {
-		return NextResponse.json({ success: false, info: "Missing fields" }, { status: 400 })
+		return NextResponse.json(
+			{ success: false, code: 1, info: "Missing fields" },
+			{ status: 400 }
+		)
 	}
 
 	const newOffer = await prisma.offer.create({

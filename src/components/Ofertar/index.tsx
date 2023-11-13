@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./ofertar.module.css"
-import axios from "axios"
+import axios, { AxiosError } from "axios"
+import { toast } from "react-toastify"
 
 export default function Ofertar() {
 	function handleSubmit(ev: React.FormEvent<HTMLFormElement>) {
@@ -15,7 +16,39 @@ export default function Ofertar() {
 			time: formData.get("horario"),
 		}
 
-		axios.post("/api/offer", jsonData)
+		const id = toast.loading("Criando oferta...")
+
+		axios
+			.post("/api/offer", jsonData)
+			.then(({ data }) => {
+				console.log("RESULTADO:", data)
+				toast.update(id, {
+					render: "Oferta criada com sucesso!",
+					type: "success",
+					isLoading: false,
+					autoClose: 5000,
+				})
+			})
+			.catch((err) => {
+				if (err instanceof AxiosError) {
+					const error = err.response?.data
+					if (error.code == 1) {
+						toast.update(id, {
+							render: "Preencha todos os campos.",
+							type: "error",
+							isLoading: false,
+							autoClose: 5000,
+						})
+					} else {
+						toast.update(id, {
+							render: "Erro ao criar oferta, tente novamente.",
+							type: "error",
+							isLoading: false,
+							autoClose: 5000,
+						})
+					}
+				}
+			})
 	}
 	return (
 		<>
