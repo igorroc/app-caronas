@@ -1,6 +1,8 @@
 import React from "react"
 import styles from "./map.module.css"
-import { useLoadScript, GoogleMap } from "@react-google-maps/api"
+import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api"
+
+import MarkerIgor from "@/../../public/marker_igor.png"
 
 export default function CustomMap() {
 	const { isLoaded } = useLoadScript({
@@ -252,7 +254,15 @@ export default function CustomMap() {
 							},
 						],
 					}}
-				/>
+				>
+					<Marker
+						position={center}
+						icon={MarkerIgor.src}
+						options={{
+							visible: true,
+						}}
+					/>
+				</GoogleMap>
 			)}
 		</div>
 	)
