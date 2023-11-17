@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Carona Solidária
 
-## Getting Started
+![Mockup](./public/mockup.png)
 
-First, run the development server:
+> Projeto desenvolvido para a disciplina de Engenharia de Software, do curso de Ciência da Computação da Universidade Estadual de Santa Cruz.
+
+## 👥 Integrantes
+
+-   [Igor Rocha](https://ilrocha.com)
+-   [Ana Cristina](https://github.com/acpmorais)
+-   [Maira Gomes](https://github.com/mairagomes)
+
+## 📚 Sobre o projeto
+
+O projeto consiste em uma aplicação web para conectar pessoas que precisam de carona com pessoas que podem oferecer carona. A aplicação foi desenvolvida utilizando o framework [Next.js](https://nextjs.org/), com o objetivo de facilitar a criação de aplicações React com renderização do lado do servidor.
+
+Esse projeto é apenas o MVP do sistema, somente com a funcionalidade de ofertar e solicitar caronas.
+
+## 🚀 Tecnologias utilizadas
+
+-   [Next.js](https://nextjs.org/)
+-   [React](https://reactjs.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Prisma](https://www.prisma.io/)
+-   [MySQL](https://www.mysql.com/)
+
+## 📦 Como instalar e executar o projeto
+
+O projeto foi desenvolvido utilizando o gerenciador de pacotes [NPM](https://www.npmjs.com/), portanto, é necessário tê-lo instalado em sua máquina, assim como o [Node.js](https://nodejs.org/en/).
+
+Faça o clone do repositório:
+
+```bash
+git clone https://github.com/igorroc/app-caronas
+```
+
+Instale as dependências do projeto:
+
+```bash
+npm install
+```
+
+Crie um arquivo `.env.local` na raiz do projeto, seguindo o modelo do arquivo `.env.example`, e preencha as variáveis de ambiente com as informações do seu banco de dados.
+
+Execute as migrations do banco de dados:
+
+```bash
+npx prisma migrate dev
+```
+
+> Caso o comando acima não funcione, tente usar `dotenv -e .env.local -- npx prisma migrate dev`
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏠 Estrutura do projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+O projeto foi desenvolvido utilizando o padrão de arquitetura MVC (Model-View-Controller), com a separação de pastas seguindo o padrão do framework Next.js.
 
-## Learn More
+As pastas e arquivos mais importantes são:
 
-To learn more about Next.js, take a look at the following resources:
+-   `/components`: contém os componentes React utilizados nas páginas.
+-   `/public`: contém os arquivos estáticos da aplicação, como imagens e fontes.
+-   `/prisma`: contém os arquivos de configuração do Prisma, que é o ORM utilizado para fazer a conexão com o banco de dados.
+-   `pages.tsx`: contém as páginas da aplicação, que são renderizadas no lado do servidor.
+-   `routes.ts`: contém as rotas da API, que são utilizadas para fazer as requisições ao banco de dados.
+-   `*.module.css`: arquivos CSS que são importados nos componentes React, utilizando o [CSS Modules](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
